@@ -36,6 +36,8 @@ jobs:
         run: make github_action_docs
       - name: Commit and Push
         # use account 'github-actions[bot]' to set the git config
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "RamseyvanderMeer"
           git config --global user.email "ramvandermeer@gmail.com"
