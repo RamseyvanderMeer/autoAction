@@ -38,5 +38,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: main
-          directory: /
+          directory: docs
           github_token: ${{ secrets.GITHUB_TOKEN }}
