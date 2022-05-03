@@ -34,9 +34,9 @@ jobs:
         run: pipx run poetry install
       - name: Build website
         run: make github_action_docs
-- name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: main
-        directory: /
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
+          directory: /
+          github_token: ${{ secrets.GITHUB_TOKEN }}
