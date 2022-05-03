@@ -34,11 +34,11 @@ jobs:
         run: pipx run poetry install
       - name: Build website
         run: make github_action_docs
-      - name: ls
+      - name: Commit and Push
+        # use account 'github-actions[bot]' to set the git config
         run: |
-          ls
-          git config --global user.email "ramvandermeer@gmail.com"
-          git config --global user.name "Ramsey van der Meer"
-          git add -f --all
-          git commit -am "_autosummary"
-          git push origin gh-pages
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git commit -m "new github pages"
+          git push
