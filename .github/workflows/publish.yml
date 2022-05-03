@@ -34,10 +34,11 @@ jobs:
         run: pipx run poetry install
       - name: Build website
         run: make github_action_docs
-      - name: Commit and Push
+      - name: token
         # use account 'github-actions[bot]' to set the git config
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and Push
         run: |
           git config --global user.name "RamseyvanderMeer"
           git config --global user.email "ramvandermeer@gmail.com"
